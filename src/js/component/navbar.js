@@ -11,47 +11,20 @@ export const Navbar = () => {
 				</Link>
 
 				<div className="ml-auto">
-					<Link to="/demo">
-						<div className="dropdown">
-							<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Personajes
-							</button>
-							<ul className="dropdown-menu">
-								<li><a className="dropdown-item" href="#">Anakin skywalker</a></li>
-								<li><a className="dropdown-item" href="#">Obi wan kenobi</a></li>
-								<li><a className="dropdown-item" href="#">Qui-Gon Jinn</a></li>
-							</ul>
-						</div>
+					<Link to="/personajes">
+					<button type="button" class="btn btn-secondary">Personajes</button>
 					</Link>
 				</div>
 
 				<div className="ml-auto">
-					<Link to="/demo">
-					<div className="dropdown">
-							<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Naves
-							</button>
-							<ul className="dropdown-menu">
-								<li><a className="dropdown-item" href="#">Halcón Milenario</a></li>
-								<li><a className="dropdown-item" href="#">Transbordador imperial</a></li>
-								<li><a className="dropdown-item" href="#">Ala-X</a></li>
-							</ul>
-						</div>
+					<Link to="/naves">
+					<button type="button" class="btn btn-secondary">Naves</button>
 					</Link>
 				</div>
 
 				<div className="ml-auto">
-					<Link to="/demo">
-					<div className="dropdown">
-							<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Planetas
-							</button>
-							<ul className="dropdown-menu">
-								<li><a className="dropdown-item" href="#">Tatooine</a></li>
-								<li><a className="dropdown-item" href="#">Coruscant</a></li>
-								<li><a className="dropdown-item" href="#">Naboo</a></li>
-							</ul>
-						</div>
+					<Link to="/planetas">
+					<button type="button" class="btn btn-secondary">Planetas</button>
 					</Link>
 				</div>
 
