@@ -12,6 +12,7 @@ import { Footer } from "./component/footer";
 import Personajes from "./views/personajes.jsx";
 import Planetas from "./views/planetas.jsx";
 import Vehiculos from "./views/vehiculos.jsx";
+import PlanetsInfo from "./views/planetinfo.jsx";
 
 //create your first component
 const Layout = () => {
@@ -31,6 +32,7 @@ const Layout = () => {
 						<Route path="/planetas" element={<Planetas />} />
 						<Route path="/naves" element={<Vehiculos />} />
 						<Route path="/single/:theid" element={<Single />} />
+						<Route path="/planetinfo/:idPlanet" element={<PlanetsInfo />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					<Footer />

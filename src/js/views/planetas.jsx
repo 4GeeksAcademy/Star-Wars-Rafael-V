@@ -18,6 +18,8 @@ const Planetas = ()=>{
                     key={index}
                     name = {item.name}
                     id={index}
+                    diameter={item.diameter}
+                    gravity={item.gravity}
                     />
                 ))}
             </div>
