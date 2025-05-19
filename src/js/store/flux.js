@@ -10,7 +10,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// Use getActions to call a function within a fuction
 			obtenerPersonajes: async () => {
 				try {
-					const response = await fetch ("https://swapi.dev/api/people")
+					const response = await fetch ("https://swapi.tech/api/people")
 					const data = await response.json()
 					console.log(data.results)
 					setStore({personajes:data.results})
@@ -21,7 +21,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			obtenerInfoPersonaje: async (id) => {
 				try {
-					const response = await fetch ("https://swapi.dev/api/people/"+id)
+					const response = await fetch ("https://swapi.tech/api/people/"+id)
 					const data = await response.json()
 					console.log(data)
 					setStore({personaje:data})
@@ -33,7 +33,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			obtenerPlanetas: async () => {
 				try {
-					const response = await fetch ("https://swapi.dev/api/planets")
+					const response = await fetch ("https://swapi.tech/api/planets")
 					const data = await response.json()
 					console.log(data.results)
 					setStore({planetas:data.results})
@@ -44,7 +44,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			obtenerInfoPlaneta: async (id) => {
 				try {
-					const response = await fetch ("https://swapi.dev/api/planets/"+id)
+					const response = await fetch ("https://swapi.tech/api/planets/"+id)
 					const data = await response.json()
 					console.log(data)
 					setStore({planeta:data})

@@ -1,5 +1,6 @@
 import React from "react"
 import peopleData from "../../img/people.json"
+import { Link } from "react-router-dom";
 
 const CardPersonajes = ({ name, gender, eyesColor,id }) => {
     const peopleImage = peopleData.people.find(p => p.id === id)?.image || "https://via.placeholder.com/300";
@@ -12,7 +13,7 @@ const CardPersonajes = ({ name, gender, eyesColor,id }) => {
                 <p className="card-text">gender: <strong>{gender}</strong></p>
                 <p className="card-text">eyesColor: <strong>{eyesColor}</strong></p>
                 <div className="d-flex justify-content-between">
-                    <a href="#" className="btn btn-outline-primary">More Info</a>
+                    <Link to={"/characterinfo/" + (id+1)} className="btn btn-outline-primary">More Info</Link>
                     <button className="btn btn-outline-warning"><i className="fa fa-heart"> </i></button>
                 </div>
             </div>
