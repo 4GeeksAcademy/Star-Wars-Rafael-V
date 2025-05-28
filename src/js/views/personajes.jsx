@@ -17,8 +17,6 @@ const Personajes = ()=>{
                     <CardPersonajes
                     key={index}
                     name = {item.name}
-                    gender = {item.gender}
-                    eyesColor = {item.eye_color}
                     id={index}
                     />
                 ))}
