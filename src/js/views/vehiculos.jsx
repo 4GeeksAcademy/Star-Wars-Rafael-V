@@ -17,7 +17,7 @@ const Vehiculos = ()=>{
                     <CardVehiculos
                     key={index}
                     name = {item.name}
-                    id={index}
+                    id={index}// <- ahora enviamos el uid real
                     />
                 ))}
             </div>

@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import FavoritesDropdown from "./FavoritesDropdown.jsx";
+
+
 export const Navbar = () => {
 
 	return (
@@ -12,27 +15,25 @@ export const Navbar = () => {
 
 				<div className="ml-auto">
 					<Link to="/personajes">
-					<button type="button" class="btn btn-secondary">Personajes</button>
+						<button type="button" class="btn btn-secondary">Personajes</button>
 					</Link>
 				</div>
 
 				<div className="ml-auto">
 					<Link to="/naves">
-					<button type="button" class="btn btn-secondary">Naves</button>
+						<button type="button" class="btn btn-secondary">Naves</button>
 					</Link>
 				</div>
 
 				<div className="ml-auto">
 					<Link to="/planetas">
-					<button type="button" class="btn btn-secondary">Planetas</button>
+						<button type="button" class="btn btn-secondary">Planetas</button>
 					</Link>
 				</div>
 
 
 				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-dark">Lista de Favotitos</button>
-					</Link>
+					<FavoritesDropdown />
 				</div>
 			</div>
 		</nav>

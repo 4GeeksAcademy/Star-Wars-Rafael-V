@@ -14,6 +14,7 @@ import Planetas from "./views/planetas.jsx";
 import Vehiculos from "./views/vehiculos.jsx";
 import PlanetsInfo from "./views/planetinfo.jsx";
 import CharacterInfo from "./views/characterinfo.jsx";
+import VehicleInfo from "./views/vehiculoinfo.jsx";
 
 //create your first component
 const Layout = () => {
@@ -34,6 +35,7 @@ const Layout = () => {
 						<Route path="/naves" element={<Vehiculos />} />
 						<Route path="/single/:theid" element={<Single />} />
 						<Route path="/planetinfo/:idPlanet" element={<PlanetsInfo />} />
+						<Route path="/vehicleinfo/:idVehicle" element={<VehicleInfo />} />
 						<Route path="/characterinfo/:idCharacter" element={<CharacterInfo />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>

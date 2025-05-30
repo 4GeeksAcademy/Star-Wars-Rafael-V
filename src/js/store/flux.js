@@ -1,21 +1,22 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			personajes:[],
-			planetas:[],
-			planeta:{},
-			personaje:{},
-			vehiculos:[],
-			vehiculo:{}
+			personajes: [],
+			planetas: [],
+			planeta: {},
+			personaje: {},
+			vehiculos: [],
+			vehiculo: {},
+			favorites: []
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
+			
 			obtenerPersonajes: async () => {
 				try {
-					const response = await fetch ("https://swapi.tech/api/people")
+					const response = await fetch("https://swapi.tech/api/people")
 					const data = await response.json()
 					console.log(data.results)
-					setStore({personajes:data.results})
+					setStore({ personajes: data.results })
 				} catch (error) {
 					console.log(error)
 				}
@@ -23,10 +24,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			obtenerInfoPersonaje: async (id) => {
 				try {
-					const response = await fetch ("https://swapi.tech/api/people/"+id)
+					const response = await fetch("https://swapi.tech/api/people/" + id)
 					const data = await response.json()
 					console.log(data)
-					setStore({personaje:data.result.properties})
+					setStore({ personaje: data.result.properties })
 				} catch (error) {
 					console.log(error)
 				}
@@ -35,10 +36,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			obtenerPlanetas: async () => {
 				try {
-					const response = await fetch ("https://swapi.tech/api/planets")
+					const response = await fetch("https://swapi.tech/api/planets")
 					const data = await response.json()
 					console.log(data.results)
-					setStore({planetas:data.results})
+					setStore({ planetas: data.results })
 				} catch (error) {
 					console.log(error)
 				}
@@ -46,10 +47,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			obtenerInfoPlaneta: async (id) => {
 				try {
-					const response = await fetch ("https://swapi.tech/api/planets/"+id)
+					const response = await fetch("https://swapi.tech/api/planets/" + id)
 					const data = await response.json()
 					console.log(data)
-					setStore({planeta:data})
+					setStore({ planeta: data.result.properties })
 				} catch (error) {
 					console.log(error)
 				}
@@ -57,10 +58,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			obtenerVehiculos: async () => {
 				try {
-					const response = await fetch ("https://swapi.tech/api/vehicles")
+					const response = await fetch("https://swapi.tech/api/vehicles")
 					const data = await response.json()
 					console.log(data.results)
-					setStore({vehiculos:data.results})
+					setStore({ vehiculos: data.results })
 				} catch (error) {
 					console.log(error)
 				}
@@ -68,16 +69,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			obtenerInfoVehiculo: async (id) => {
 				try {
-					const response = await fetch ("https://swapi.tech/api/vehicles/"+id)
+					const response = await fetch("https://swapi.tech/api/vehicles/" + id)
 					const data = await response.json()
 					console.log(data)
-					setStore({vehiculo:data})
+					setStore({ vehiculo: data.result.properties })
 				} catch (error) {
 					console.log(error)
 				}
+			},
+
+
+
+			agregarFavorito: (item) => {
+				const store = getStore();
+				if (!store.favorites.includes(item)) {
+					setStore({ favorites: [...store.favorites, item] });
+				}
+			},
+
+			eliminarFavorito: (item) => {
+				const store = getStore();
+				const nuevosFavoritos = store.favorites.filter(favorito => favorito !== item);
+				setStore({ favorites: nuevosFavoritos });
 			}
-			
-			
+
 		}
 	};
 };
