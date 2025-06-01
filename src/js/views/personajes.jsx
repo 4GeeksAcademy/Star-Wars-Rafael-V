@@ -18,7 +18,6 @@ const Personajes = () => {
                         key={index}
                         name={item.name}
                         id={index}
-
                     />
                 ))}
             </div>

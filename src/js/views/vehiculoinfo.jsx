@@ -2,8 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router";
 import vehiclesData from "../../img/vehicle.json"
-//cuando es un componente la primera letra va en MAYUSCULA la segunda palabra y tercera su primera letra va en mayuscula ("P"lanets"I"nfo) solo en js
-//cuando es una variable la primera letra va en minuscula y el resto va igual sea la primera letra segunda palabra en mayuscula (set"L"ista) solo en js
+
 const VehiculoInfo = () => {
     const { actions, store } = useContext(Context)
     const { idVehicle } = useParams()
